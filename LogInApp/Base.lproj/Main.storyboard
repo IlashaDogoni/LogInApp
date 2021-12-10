@@ -28,7 +28,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-el-VpP">
                                         <rect key="frame" x="16" y="60" width="343" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvd-dz-r0d">
                                         <rect key="frame" x="135" y="120" width="105" height="50"/>
@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="4838" y="279"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="IDl-sW-VMY">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="adw-1s-PI1" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="adw-1s-PI1" customClass="WelcomeViewController" customModule="LogInApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mQA-Co-pkd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,15 +174,26 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="7ql-IO-ccU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-2J-x4k">
+                                <rect key="frame" x="173" y="220" width="29.5" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2YS-bm-TfP"/>
                         <color key="backgroundColor" systemColor="linkColor"/>
                         <constraints>
                             <constraint firstItem="HgW-gP-A3K" firstAttribute="centerX" secondItem="mQA-Co-pkd" secondAttribute="centerX" id="5Fy-Eq-DWY"/>
+                            <constraint firstItem="ib1-2J-x4k" firstAttribute="centerX" secondItem="mQA-Co-pkd" secondAttribute="centerX" id="W6X-8A-PIx"/>
                             <constraint firstItem="HgW-gP-A3K" firstAttribute="centerY" secondItem="mQA-Co-pkd" secondAttribute="centerY" id="gXx-Wx-WBY"/>
+                            <constraint firstItem="HgW-gP-A3K" firstAttribute="top" secondItem="ib1-2J-x4k" secondAttribute="bottom" constant="40" id="hUR-ZQ-2bs"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="6KM-g3-bkX"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="ib1-2J-x4k" id="jDM-Sw-udL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWp-5l-sYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

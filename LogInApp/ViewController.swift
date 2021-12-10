@@ -38,6 +38,11 @@ class LoginViewController: UIViewController {
                   message: "Your password is Password 😉")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let tabBarController = segue.destination as! UITabBarController
+        let welcomeVC = tabBarController.viewControllers?.first as! WelcomeViewController
+        welcomeVC.user = user
+    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
